@@ -49,9 +49,9 @@ module.exports = {
         ring: "hsl(var(--ring))",
       },
       fontFamily: {
-        heading: ["Oswald", "sans-serif"],
-        subheading: ["Montserrat", "sans-serif"],
-        body: ["Cooper Hewitt", "sans-serif"],
+        sans: ["var(--font-cooper-hewitt)", "sans-serif"],
+        heading: ["var(--font-oswald)", "sans-serif"],
+        subheading: ["var(--font-montserrat)", "sans-serif"],
       },
       fontSize: {
         heading: "83px",

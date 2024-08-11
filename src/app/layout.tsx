@@ -1,13 +1,14 @@
 import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import Footer from "@/components/Footer"
+import Navbar from "@/components/Navbar"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+import { cooperHewitt, montserrat, oswald } from "../lib/fonts"
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -65,13 +66,14 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${cooperHewitt.variable} ${oswald.variable} ${montserrat.variable}`}
+    >
       <head />
       <body
-        className={cn(
-          "min-h-screen bg-background antialiased",
-          inter.className
-        )}
+        className={cn("min-h-screen bg-background font-sans text-foreground")}
       >
         <ThemeProvider
           attribute="class"
@@ -79,7 +81,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
