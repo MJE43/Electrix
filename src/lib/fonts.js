@@ -3,7 +3,7 @@ import localFont from "next/font/local"
 
 // Cooper Hewitt (local font)
 export const cooperHewitt = localFont({
-  src: "./fonts/CooperHewitt-Book.woff",
+  src: "../app/fonts/CooperHewittBook.ttf",
   variable: "--font-cooper-hewitt",
   display: "swap",
 })
