@@ -1,52 +1,72 @@
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
-import { ModeToggle } from "@/components/mode-toggle"
 import { siteConfig } from "@/config/site"
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background">
-      <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <div className="flex gap-6 md:gap-10">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="inline-block font-bold">{siteConfig.name}</span>
+    <header className="sticky top-0 z-40 w-full bg-white">
+      <div className="container flex h-20 items-center justify-between">
+        <Link href="/" className="flex items-center space-x-2">
+          <Image src="/logo.webp" alt={siteConfig.name} width={150} height={50} />
+        </Link>
+        <nav className="hidden md:flex space-x-6">
+          <Link
+            href="/"
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "text-red-500 font-semibold"
+            )}
+          >
+            Home
           </Link>
-          <nav className="flex gap-6">
-            <Link
-              href="/about"
-              className={cn(
-                buttonVariants({ variant: "ghost" }),
-                "text-foreground"
-              )}
-            >
-              About
-            </Link>
-            <Link
-              href="/services"
-              className={cn(
-                buttonVariants({ variant: "ghost" }),
-                "text-foreground"
-              )}
-            >
-              Services
-            </Link>
-            <Link
-              href="/contact"
-              className={cn(
-                buttonVariants({ variant: "ghost" }),
-                "text-foreground"
-              )}
-            >
-              Contact
-            </Link>
-          </nav>
-        </div>
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-1">
-            <ModeToggle />
-          </nav>
-        </div>
+          <Link
+            href="/about"
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "text-gray-700 hover:text-red-500"
+            )}
+          >
+            About
+          </Link>
+          <Link
+            href="/services"
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "text-gray-700 hover:text-red-500"
+            )}
+          >
+            Residential & Commercial Services
+          </Link>
+          <Link
+            href="/coverage-area"
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "text-gray-700 hover:text-red-500"
+            )}
+          >
+            Coverage Area
+          </Link>
+          <Link
+            href="/contact"
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "text-gray-700 hover:text-red-500"
+            )}
+          >
+            Contact
+          </Link>
+        </nav>
+        <Link
+          href="/contact"
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            "hidden md:inline-flex border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
+          )}
+        >
+          CONTACT US TODAY
+        </Link>
       </div>
     </header>
   )
