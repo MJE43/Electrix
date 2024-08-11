@@ -6,67 +6,51 @@ import { siteConfig } from "@/config/site"
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-40 w-full bg-white">
-      <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <Image src="/logo.webp" alt={siteConfig.name} width={150} height={50} />
+    <header className="sticky top-0 z-40 w-full bg-white shadow-sm">
+      <div className="container flex h-24 items-center justify-between">
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.webp" alt={siteConfig.name} width={200} height={67} className="mr-4" />
         </Link>
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex space-x-8">
           <Link
             href="/"
-            className={cn(
-              buttonVariants({ variant: "link" }),
-              "text-red-500 font-semibold"
-            )}
+            className="text-red-500 font-bold"
           >
             Home
           </Link>
           <Link
             href="/about"
-            className={cn(
-              buttonVariants({ variant: "link" }),
-              "text-gray-700 hover:text-red-500"
-            )}
+            className="text-gray-700 hover:text-red-500 font-medium"
           >
             About
           </Link>
           <Link
             href="/services"
-            className={cn(
-              buttonVariants({ variant: "link" }),
-              "text-gray-700 hover:text-red-500"
-            )}
+            className="text-gray-700 hover:text-red-500 font-medium"
           >
             Residential & Commercial Services
           </Link>
           <Link
             href="/coverage-area"
-            className={cn(
-              buttonVariants({ variant: "link" }),
-              "text-gray-700 hover:text-red-500"
-            )}
+            className="text-gray-700 hover:text-red-500 font-medium"
           >
             Coverage Area
           </Link>
           <Link
             href="/contact"
-            className={cn(
-              buttonVariants({ variant: "link" }),
-              "text-gray-700 hover:text-red-500"
-            )}
+            className="text-gray-700 hover:text-red-500 font-medium"
           >
             Contact
           </Link>
         </nav>
-        <Link
-          href="/contact"
-          className={cn(
-            buttonVariants({ variant: "outline" }),
-            "hidden md:inline-flex border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
-          )}
-        >
-          CONTACT US TODAY
-        </Link>
+        <div className="hidden md:block">
+          <Link
+            href="/contact"
+            className="bg-red-500 text-white px-6 py-3 rounded font-bold hover:bg-red-600 transition duration-300"
+          >
+            CONTACT US TODAY
+          </Link>
+        </div>
       </div>
     </header>
   )
