@@ -21,30 +21,30 @@ const Navbar = () => {
           </div>
         </Link>
         <nav className="hidden space-x-8 md:flex">
-          <Link href="/" className="font-bold text-red-500">
+          <Link href="/" className="font-subheading text-subheading uppercase text-primary">
             Home
           </Link>
           <Link
             href="/about"
-            className="font-medium text-gray-700 hover:text-red-500"
+            className="font-subheading text-subheading uppercase text-neutral hover:text-primary"
           >
             About
           </Link>
           <Link
             href="/services"
-            className="font-medium text-gray-700 hover:text-red-500"
+            className="font-subheading text-subheading uppercase text-neutral hover:text-primary"
           >
             Residential & Commercial Services
           </Link>
           <Link
             href="/coverage-area"
-            className="font-medium text-gray-700 hover:text-red-500"
+            className="font-subheading text-subheading uppercase text-neutral hover:text-primary"
           >
             Coverage Area
           </Link>
           <Link
             href="/contact"
-            className="font-medium text-gray-700 hover:text-red-500"
+            className="font-subheading text-subheading uppercase text-neutral hover:text-primary"
           >
             Contact
           </Link>
@@ -52,9 +52,12 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Link
             href="/contact"
-            className="rounded bg-red-500 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-600"
+            className={cn(
+              buttonVariants({ variant: "default", size: "lg" }),
+              "font-heading text-heading uppercase bg-primary text-white hover:bg-primary/90"
+            )}
           >
-            CONTACT US TODAY
+            Contact Us Today
           </Link>
         </div>
       </div>
