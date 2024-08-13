@@ -7,11 +7,11 @@ import { buttonVariants } from "@/components/ui/button"
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-40 w-full bg-white shadow-sm">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-40 w-full bg-white">
+      <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className="relative h-[50px] w-[150px]">
+          <div className="relative h-[40px] w-[100px]">
             <Image
               src="/logo.png"
               alt={siteConfig.name}
@@ -23,31 +23,31 @@ const Navbar = () => {
         </Link>
 
         {/* Navigation Links */}
-        <nav className="hidden space-x-8 md:flex">
-          <Link href="/" className="font-subheading text-subheading uppercase text-primary">
+        <nav className="hidden space-x-6 md:flex">
+          <Link href="/" className="font-sans text-sm uppercase text-primary">
             Home
           </Link>
           <Link
             href="/about"
-            className="font-subheading text-subheading uppercase text-neutral hover:text-primary"
+            className="font-sans text-sm uppercase text-neutral hover:text-primary"
           >
             About
           </Link>
           <Link
             href="/services"
-            className="font-subheading text-subheading uppercase text-neutral hover:text-primary"
+            className="font-sans text-sm uppercase text-neutral hover:text-primary"
           >
             Residential & Commercial Services
           </Link>
           <Link
             href="/coverage-area"
-            className="font-subheading text-subheading uppercase text-neutral hover:text-primary"
+            className="font-sans text-sm uppercase text-neutral hover:text-primary"
           >
             Coverage Area
           </Link>
           <Link
             href="/contact"
-            className="font-subheading text-subheading uppercase text-neutral hover:text-primary"
+            className="font-sans text-sm uppercase text-neutral hover:text-primary"
           >
             Contact
           </Link>
@@ -58,8 +58,8 @@ const Navbar = () => {
           <Link
             href="/contact"
             className={cn(
-              buttonVariants({ variant: "default", size: "lg" }),
-              "font-heading text-heading uppercase bg-primary text-white hover:bg-primary/90"
+              buttonVariants({ variant: "default", size: "sm" }),
+              "font-sans text-sm uppercase bg-primary text-white hover:bg-primary/90"
             )}
           >
             Contact Us Today
