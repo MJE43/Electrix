@@ -12,7 +12,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center">
           <div className="relative h-[50px] w-[150px]">
             <Image
-              src="/logo.webp"
+              src="/logo.png"
               alt={siteConfig.name}
               fill
               style={{ objectFit: "contain" }}
