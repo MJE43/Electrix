@@ -4,7 +4,7 @@ import FeaturesList from "@/components/FeaturesList"
 import FeaturesSection from "@/components/FeaturesSection"
 import { HeroSection } from "@/components/HeroSection"
 import { ModeToggle } from "@/components/mode-toggle"
-import Testimonials from "@/components/Testimonials"
+import { TestimonialsSection } from "@/components/TestimonialsSection"
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <FeaturesSection />
       <FeaturesList />
       <Benefits />
-      <Testimonials />
+      <TestimonialsSection />
       <CTASection />
     </main>
   )
