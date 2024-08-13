@@ -9,6 +9,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-40 w-full bg-white shadow-sm">
       <div className="container flex h-16 items-center justify-between">
+        {/* Logo */}
         <Link href="/" className="flex items-center">
           <div className="relative h-[50px] w-[150px]">
             <Image
@@ -20,6 +21,8 @@ const Navbar = () => {
             />
           </div>
         </Link>
+
+        {/* Navigation Links */}
         <nav className="hidden space-x-8 md:flex">
           <Link href="/" className="font-subheading text-subheading uppercase text-primary">
             Home
@@ -49,6 +52,8 @@ const Navbar = () => {
             Contact
           </Link>
         </nav>
+
+        {/* Contact Us Button */}
         <div className="hidden md:block">
           <Link
             href="/contact"
