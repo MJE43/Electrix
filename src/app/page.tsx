@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-          <ModeToggle />
-        </div>
+      <div className="container flex justify-end mt-4">
+        <ModeToggle />
       </div>
     </main>
   )
