@@ -1,9 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
-import { Menu } from "lucide-react"
+import { Menu, Zap } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
@@ -13,19 +12,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white shadow-sm">
+    <header className="sticky top-0 z-40 w-full bg-jagger shadow-sm">
       <div className="container flex h-24 items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <div className="relative h-[50px] w-[120px]">
-            <Image
-              src="/logo.png"
-              alt={siteConfig.name}
-              fill
-              style={{ objectFit: "contain" }}
-              className="object-left"
-            />
-          </div>
+        <Link href="/" className="flex items-center text-white">
+          <Zap className="h-8 w-8" />
         </Link>
 
         {/* Mobile Menu Button */}
@@ -36,13 +27,13 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          <Menu className="h-6 w-6" />
+          <Menu className="h-6 w-6 text-white" />
         </Button>
 
         {/* Navigation Links */}
         <nav
           className={cn(
-            "absolute left-0 right-0 top-24 flex-col space-y-4 bg-white p-4 md:static md:flex md:flex-row md:space-x-8 md:space-y-0 md:p-0",
+            "absolute left-0 right-0 top-24 flex-col space-y-4 bg-jagger p-4 text-white md:static md:flex md:flex-row md:space-x-8 md:space-y-0 md:p-0",
             isMenuOpen ? "flex" : "hidden md:flex"
           )}
         >
@@ -77,7 +68,7 @@ const NavLink = ({ href, children, active = false }) => (
       "font-subheading text-sm uppercase transition-colors duration-300",
       active
         ? "text-primary"
-        : "text-neutral hover:text-primary focus:text-primary"
+        : "text-white hover:text-primary focus:text-primary"
     )}
   >
     {children}

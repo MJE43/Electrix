@@ -118,11 +118,12 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
         >
           What Our Customers Say
         </motion.h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-3">
           <AnimatePresence>
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
+                className="rounded-lg shadow-lg"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}

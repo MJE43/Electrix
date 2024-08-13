@@ -6,18 +6,19 @@ import { buttonVariants } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
-    <section className="w-full bg-white py-16 text-neutral md:py-24 lg:py-32">
+    <section className="w-full bg-white py-20 text-neutral md:py-28 lg:py-36">
       <div className="container px-4 md:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:justify-between">
+        <div className="flex flex-col items-center gap-16 lg:flex-row lg:justify-between">
           {/* Left Column */}
-          <div className="w-full space-y-8 text-center lg:w-1/2 lg:text-left">
-            <h1 className="text-4xl text-heading font-bold uppercase tracking-tight md:text-5xl lg:text-6xl">
-              YOUR TRUSTED LOCAL ELECTRICIANS
+          <div className="w-full space-y-10 text-center lg:w-1/2 lg:text-left">
+            <h1 className="text-5xl text-heading font-bold uppercase tracking-tight md:text-6xl lg:text-7xl">
+              Your Trusted Local <br />
+              Electricians
             </h1>
-            <p className="text-subheading text-xl font-light uppercase tracking-widest md:text-2xl">
-              IN POWER WE TRUST
+            <p className="text-2xl text-subheading font-light uppercase tracking-widest md:text-3xl">
+              In Power We Trust
             </p>
-            <p className="mx-auto max-w-xl text-base md:text-lg lg:mx-0">
+            <p className="mx-auto max-w-xl text-lg md:text-xl lg:mx-0">
               With over 20 years of experience, we provide top-notch electrical
               services for residential and commercial properties. Our team of
               certified electricians ensures safety, reliability, and customer
@@ -36,7 +37,7 @@ export function HeroSection() {
 
           {/* Right Column */}
           <div className="w-full lg:w-1/2">
-            <div className="relative mx-auto aspect-[4/3] w-full max-w-[600px] overflow-hidden rounded-lg">
+            <div className="relative mx-auto aspect-[4/3] w-full max-w-[600px] overflow-hidden rounded-lg shadow-lg">
               <Image
                 src="/outdoor-panel.png"
                 alt="Electrician at work"
