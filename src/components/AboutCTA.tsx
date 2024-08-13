@@ -6,7 +6,6 @@ export default function About() {
   return (
     <main>
       <AboutHeader />
-      <AboutSection />
       <TeamSection />
       <TestimonialsSection />
       <AboutCTA />
