@@ -6,7 +6,7 @@ import { buttonVariants } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
-    <section className="w-full bg-eastBay py-16 text-white md:py-24 lg:py-32">
+    <section className="w-full bg-white py-16 text-neutral md:py-24 lg:py-32">
       <div className="container px-4 md:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:justify-between">
           {/* Left Column */}

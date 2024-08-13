@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 
 export default function FeaturesSection() {
   return (
-    <section className="bg-eastBay py-16 text-white">
+    <section className="bg-jagger py-16 text-white">
       <div className="container mx-auto flex flex-col items-center md:flex-row">
         <div className="mb-8 md:mb-0 md:w-1/2">
           <Image
@@ -22,7 +22,12 @@ export default function FeaturesSection() {
             available 24/7 to handle any electrical emergency, ensuring your
             safety and peace of mind.
           </p>
-          <Button variant="secondary">Contact Us Now</Button>
+          <Button
+            variant="secondary"
+            className="bg-white text-jagger hover:bg-neutral hover:text-white"
+          >
+            Contact Us Now
+          </Button>
         </div>
       </div>
     </section>
