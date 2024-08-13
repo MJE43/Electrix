@@ -1,14 +1,23 @@
+import Benefits from "@/components/Benefits"
+import CTASection from "@/components/CTASection"
+import FeaturesList from "@/components/FeaturesList"
+import FeaturesSection from "@/components/FeaturesSection"
+import { HeroSection } from "@/components/HeroSection"
 import { ModeToggle } from "@/components/mode-toggle"
-import HeroSection from "@/components/HeroSection"
+import Testimonials from "@/components/Testimonials"
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      <div className="container flex justify-end mt-4">
+      <div className="container mt-4 flex justify-end">
         <ModeToggle />
       </div>
-      {/* Add more sections as needed */}
+      <FeaturesSection />
+      <FeaturesList />
+      <Benefits />
+      <Testimonials />
+      <CTASection />
     </main>
   )
 }
