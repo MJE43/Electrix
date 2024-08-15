@@ -14,6 +14,7 @@ import {
   FaRegLightbulb,
   FaVideo,
 } from "react-icons/fa"
+import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 
@@ -69,43 +70,47 @@ const services: Service[] = [
   },
 ]
 
-const ServicesSection: React.FC = () => (
-  <section className="bg-east-bay py-20">
-    <div className="container mx-auto px-4">
-      <motion.h2
-        className="mb-12 text-center font-heading text-5xl uppercase text-white"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        What We Offer
-      </motion.h2>
-      <div className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <ServiceCard
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-            />
-          </motion.div>
-        ))}
-      </div>
-      <div className="mt-12 text-center">
-        <Button
-          asChild
-          className="rounded-full bg-primary px-8 py-4 font-subheading text-subheading uppercase text-white transition-all duration-300 hover:bg-primary/90"
+const ServicesSection: React.FC = () => {
+  const { theme } = useTheme()
+
+  return (
+    <section className="bg-background py-20 text-foreground">
+      <div className="container mx-auto px-4">
+        <motion.h2
+          className="mb-12 text-center font-heading text-5xl uppercase"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <Link href="/contact">Get a Free Quote</Link>
-        </Button>
+          What We Offer
+        </motion.h2>
+        <div className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <ServiceCard
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+              />
+            </motion.div>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Button
+            asChild
+            className="rounded-full bg-primary px-8 py-4 font-subheading text-subheading uppercase text-primary-foreground transition-all duration-300 hover:bg-primary/90"
+          >
+            <Link href="/contact">Get a Free Quote</Link>
+          </Button>
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 export default ServicesSection
