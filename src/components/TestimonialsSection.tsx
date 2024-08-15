@@ -78,34 +78,62 @@ interface TestimonialsSectionProps {
 }
 
 export function TestimonialsSection() {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      text: "K.P. Power Electrical Services did an amazing job rewiring my home. Their team was professional, efficient, and left my house cleaner than when they arrived!",
+      id: "1",
+      quote:
+        "Kyle did an amazing job upgrading our home's electrical system. Professional and efficient!",
+      author: "Sarah J., Phoenix",
     },
     {
-      name: "Mike Thompson",
-      text: "I've used K.P. Power for both my home and business. Their expertise in both residential and commercial work is impressive. Highly recommended!",
+      id: "2",
+      quote:
+        "I highly recommend Kyle for any residential electrical needs. He's responsive and knowledgeable.",
+      author: "Mark T., Scottsdale",
     },
     {
-      name: "Emily Rodriguez",
-      text: "When we had an electrical emergency late at night, K.P. Power was there within an hour. Their 24/7 service is a lifesaver!",
+      id: "3",
+      quote:
+        "Kyle's attention to detail and commitment to safety impressed me. Great service at a fair price!",
+      author: "Emily R., Tucson",
     },
   ]
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [testimonials.length])
+
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-20">
       <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-3xl font-bold">
+        <motion.h2
+          className="mb-12 text-center font-heading text-heading text-foreground"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           What Our Customers Say
-        </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="rounded-lg bg-gray-100 p-6">
-              <p className="mb-4 italic">"{testimonial.text}"</p>
-              <p className="font-bold">- {testimonial.name}</p>
-            </div>
-          ))}
+        </motion.h2>
+        <div className="grid gap-12 md:grid-cols-3">
+          <AnimatePresence>
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.id}
+                className="rounded-lg shadow-lg"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 50 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <TestimonialCard {...testimonial} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>
