@@ -3,6 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import { IconType } from "react-icons"
+import { motion } from "framer-motion"
 import {
   FaBolt,
   FaCar,
@@ -69,28 +70,36 @@ const services: Service[] = [
 ]
 
 const ServicesSection: React.FC = () => (
-  <section className="bg-muted py-20">
+  <section className="bg-east-bay py-20">
     <div className="container mx-auto px-4">
-      <h3 className="mb-2 text-center font-subheading text-sm uppercase tracking-wider text-neutral">
-        Our Services
-      </h3>
-      <h2 className="mb-12 text-center font-heading text-4xl text-neutral">
+      <motion.h2
+        className="mb-12 text-center font-heading text-5xl uppercase text-white"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         What We Offer
-      </h2>
-      <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      </motion.h2>
+      <div className="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service, index) => (
-          <ServiceCard
+          <motion.div
             key={index}
-            title={service.title}
-            description={service.description}
-            icon={service.icon}
-          />
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <ServiceCard
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+            />
+          </motion.div>
         ))}
       </div>
       <div className="mt-12 text-center">
         <Button
           asChild
-          className="transform rounded-full bg-primary px-12 py-6 text-xl font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-xl"
+          className="rounded-full bg-primary px-8 py-4 font-subheading text-subheading uppercase text-white transition-all duration-300 hover:bg-primary/90"
         >
           <Link href="/contact">Get a Free Quote</Link>
         </Button>

@@ -70,7 +70,7 @@
 
 ## Project Structure
 
-This project uses NextJS 14, Tailwind CSS, and Shadcn/UI. Ensure that the following configurations are in place:
+This project uses NextJS 14 with Typescript and App Router, Tailwind CSS, and Shadcn/UI. Ensure that the following configurations are in place:
 
 ### Tailwind Configuration
 
@@ -172,4 +172,3 @@ module.exports = {
 }
 ```
 
-Remember to keep this style guide updated as the project evolves.

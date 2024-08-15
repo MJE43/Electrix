@@ -18,11 +18,12 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => {
     <motion.div
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300 }}
+      className="h-full"
     >
       <Card
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="border-2 border-primary border-opacity-30 bg-muted backdrop-blur-sm transition-all duration-300"
+        className="h-full border-2 border-primary border-opacity-30 bg-jagger text-white backdrop-blur-sm transition-all duration-300"
       >
         <CardHeader>
           <div className="mb-4 flex justify-center">
@@ -47,7 +48,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => {
           >
             "
           </motion.div>
-          <p className="relative z-10 mb-4 text-body italic leading-body text-foreground">
+          <p className="relative z-10 mb-4 font-body text-body italic leading-body">
             {quote}
           </p>
           <motion.div
@@ -58,7 +59,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => {
           >
             "
           </motion.div>
-          <CardTitle className="font-subheading text-primary">
+          <CardTitle className="font-subheading text-subheading text-primary uppercase">
             {author}
           </CardTitle>
         </CardContent>
@@ -109,22 +110,22 @@ export function TestimonialsSection() {
   }, [testimonials.length])
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-east-bay py-20">
       <div className="container mx-auto px-4">
         <motion.h2
-          className="mb-12 text-center font-heading text-heading text-foreground"
+          className="mb-12 text-center font-heading text-heading uppercase text-white"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           What Our Customers Say
         </motion.h2>
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           <AnimatePresence>
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
-                className="rounded-lg shadow-lg"
+                className="h-full"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 50 }}
